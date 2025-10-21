@@ -1,0 +1,17 @@
+# dbt profiles configuration
+# This file is used by dbt to connect to your data warehouse
+# Update the connection details below with your actual credentials
+
+dbt:
+  outputs:
+    dev:
+      account: npb88391
+      database: dbt_db
+      password: "{{ env_var('SNOWFLAKE_PWD') }}"
+      role: dbt_role
+      schema: dbt_schema
+      threads: 4
+      type: snowflake
+      user: golkel
+      warehouse: dbt_wh
+  target: dev
